@@ -1,4 +1,4 @@
-
+-1
         //task1 script//
         const rawPrice = document.getElementById('raw-price');
         const finalPrice = document.getElementById('final-price');
@@ -121,5 +121,5 @@
                 
             }
            document.getElementById("display-vowel-count").textContent=vowels
-           document.getElementById("num").textContent = vowels.length-(1*vowels.length)
+           document.getElementById("num").textContent = vowels.length-(1*vowels.length-1)
         })
