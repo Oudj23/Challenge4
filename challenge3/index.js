@@ -24,6 +24,7 @@
             if(value == 0 || value == 1 || value > 9){ 
                 input.value= ""
             }
+        
             else{
                 function showresults(){
                     var items = document.getElementsByTagName("th");
@@ -118,7 +119,9 @@
                 if(value[i] === 'a' || value[i] === 'e' || value[i] === 'i' || value[i] === 'o' || value[i] === 'u'){
                     vowels += value[i]+"," ;
                 }
-                
+                else{
+                        vowels += ""
+                }
             }
            document.getElementById("display-vowel-count").textContent=vowels
                 var len = vowels.length;
