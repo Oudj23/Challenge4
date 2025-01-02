@@ -121,5 +121,5 @@
                 
             }
            document.getElementById("display-vowel-count").textContent=vowels
-           document
+           document.getElementById("num").textContent = vowels.length
         })
