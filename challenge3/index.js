@@ -116,7 +116,7 @@
             var vowels = ""
             for(i=0;i<value.length;i++){
                 if(value[i] === 'a' || value[i] === 'e' || value[i] === 'i' || value[i] === 'o' || value[i] === 'u'){
-                    vowels += value[i]v+"," ;
+                    vowels += value[i]+"," ;
                 }
                 
             }
