@@ -116,10 +116,10 @@
             var vowels = ""
             for(i=0;i<value.length;i++){
                 if(value[i] === 'a' || value[i] === 'e' || value[i] === 'i' || value[i] === 'o' || value[i] === 'u'){
-                    vowels += value[i] ;
+                    vowels += value[i]v+"," ;
                 }
                 
             }
            document.getElementById("display-vowel-count").textContent=vowels
-           document.getElementById("num").textContent = vowels.lengt
+           document.getElementById("num").textContent = (vowels.lengt)/3
         })
