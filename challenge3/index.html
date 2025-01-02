@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #f2f2f2;
+        }
+        section{
+            background-color: white;
+            width: 500px;
+            height: 300px;
+            border-radius: 18px;
+            border: grey 2px solid;
+            margin-top: 20px;
+        }
+        
+        #raw-price{
+            font-size: 18px;
+            width: 300px;
+            display: flex;
+            height: 30px;
+            border-radius: 50px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+            border: grey 2px solid;
+        }
+        #temp-c{
+            font-size: 18px;
+            width: 300px;
+            display: flex;
+            height: 30px;
+            border-radius: 50px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+            border: grey 2px solid;
+        }
+        #temp-F{
+            font-size: 18px;
+            width: 300px;
+            display: flex;
+            height: 30px;
+            border-radius: 50px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+        }
+        .task1 h1{
+            font-size: 24px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+        }
+        .task1 h2{
+            font-size: 24px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+        }
+    
+        .task2 h2{
+            font-size: 24px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+        }
+        .task4 h2{
+            font-size: 24px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+        }
+        .task5 h2{
+            font-size: 24px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+        }
+        #enternumber{
+            font-size: 18px;
+            width: 300px;
+            display: flex;
+            height: 30px;
+            border-radius: 50px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+            border: grey 2px solid;
+
+        }
+        #string{
+            font-size: 18px;
+            width: 300px;
+            display: flex;
+            height: 30px;
+            border-radius: 50px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+            border: grey 2px solid;
+        }
+        #string-vowel{
+            font-size: 18px;
+            width: 300px;
+            display: flex;
+            height: 30px;
+            border-radius: 50px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+            border: grey 2px solid;
+        }
+        .task6 h2{
+            font-size: 24px;
+            display: flex;
+            justify-self: center;
+            margin-left: -50px;
+        }
+        table{
+            width:100% ;
+            border-collapse: collapse;
+            margin-top: 40px;
+        }
+        th{
+            border: black 2px solid;
+        }
+        td{
+            border: black 2px solid;
+            
+        }
+        .Tasks{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div class="Tasks">
+        <section class="task1">
+                <h2>VAT calculation</h2>
+                <input type="number" id="raw-price" placeholder="Enter price">
+                <h1>Final Price:<br/><span id="final-price">0</span></h1>
+            </section>
+            <section class="task2">
+                <h2>Multiplication Table</h2>
+                <input type="number" id="enternumber" placeholder="Enter number form 2 to 9" >
+                <table>
+                    <thead>
+                        <tr> 
+                            <th>0</th>
+                            <th>1</th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th>4</th>
+                            <th>5</th>
+                            <th>6</th>
+                            <th>7</th>
+                            <th>8</th>
+                            <th>9</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </section>
+            <section class="task3">
+                <h2>Array opperation</h2>
+                <h1>Check console ... </h1>
+            </section>
+            <section class="task4">
+                <h2>Temperateur conversion</h2>
+                <input type="number" id="temp-c" placeholder="Enter temperature in Celsius degrees">
+                <h2 id="result">Fahrenheit:</h2>
+                <input type="number" id="temp-F" placeholder="Enter temperature in farhenheit degrees">
+                <h2 id="result2">Celsius:</h2>
+            </section>
+            <section class="task5">
+                <h2>String reversal</h2>
+                <input type="text" id="string" placeholder="Enter a string">
+                <h2 id="reversed">Reversed string:</h2>
+            </section>
+            <section class="task6">
+                <h2>Vowel counter</h2>
+                <input type="text" id="string-vowel" placeholder="Enter a string">
+                <h2 id="display-vowel-count">Vowel count:</h2>
+                <h2 id="num">Vowel count : </h2>
+            </section>
+    </div>
+   
+    <script>
+        //task1 script//
+        const rawPrice = document.getElementById('raw-price');
+        const finalPrice = document.getElementById('final-price');
+        const vatRate = 0.185
+        rawPrice.addEventListener('input', () => {
+            const price = parseFloat(rawPrice.value);
+            const vat = price * vatRate;
+            const final = price + vat;
+            if(final >= 0){
+                finalPrice.textContent = final;
+            }
+            else{
+                finalPrice.textContent = "0";
+            }
+            
+        })
+        
+    </script>
+    <script>
+        //task2 script//
+        var input = document.getElementById('enternumber');
+        input.addEventListener('input', function() {
+            var value = this.value;
+            if(value == 0 || value == 1 || value > 9){ 
+                input.value= ""
+            }
+            else{
+                function showresults(){
+                    var items = document.getElementsByTagName("th");
+                    var items2 = document.getElementsByTagName("td"); 
+                    console.log(items[1].textContent)
+                    for(i=0;i<10;i++){
+                        var value = input.value * i;
+                        items2[i].textContent = value
+                    }
+
+                }
+                showresults()
+            }
+        })
+        
+    </script>
+    <script>
+        //task3 script//
+        const arr = [3,11,7,2,9,10]
+       
+        function somme (array){
+            let sum = 0;
+            for (let i = 0; i < array.length; i++) {
+                sum += array[i];
+            }
+            console.log(sum)
+            var avg = sum/array.length
+            console.log(avg)
+        }
+        somme(arr)
+        function max(array){
+            let max = array[0];
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] > max) {
+                    max= array[i]
+                    console.log(max)
+                }
+                else{
+                    break
+                    
+                }
+            }
+            
+        }
+        max(arr)
+        function min(array){
+            let min = array[0];
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] < min) {
+                    min= array[i]  
+                }
+                
+            } console.log(min)
+            
+        }
+        min(arr)
+      
+    </script>
+    <script>
+        //task 4 script//
+        const tempc = document.getElementById("temp-c")
+        const tempf = document.getElementById("temp-F")
+        tempc.addEventListener("input", function(){
+            let value = tempc.value
+            let result = value * 9/5 + 32
+            document.getElementById("result").innerHTML ="Fahrenheit:" + result
+        })
+        tempf.addEventListener("input", function(){
+            let value = tempf.value
+            let result =  (value-32)/9*5
+            document.getElementById("result2").innerHTML ="Celsius:" +result
+        })
+    </script>
+    <script>
+        var string = document.getElementById("string")
+        string.addEventListener("input",function(){
+            var value = string.value;
+            var reversedtext = ''
+            for (let i = value.length - 1; i >= 0; i--) {
+                reversedtext += value[i]
+            }
+            document.getElementById("reversed").innerHTML = reversedtext
+        })
+    </script>
+    <script>
+        //task6 script//
+        const string_input = document.getElementById("string-vowel")
+        string_input.addEventListener("input", function(){
+            const value = string_input.value
+            var vowels = ""
+            for(i=0;i<value.length;i++){
+                if(value[i] === 'a' || value[i] === 'e' || value[i] === 'i' || value[i] === 'o' || value[i] === 'u'){
+                    vowels += value[i] + ",";
+                }
+                
+            }
+           document.getElementById("display-vowel-count").textContent=vowels
+           document
+        })
+    </script>
+</body>
+</html>
