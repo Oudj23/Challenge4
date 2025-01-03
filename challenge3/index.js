@@ -50,7 +50,7 @@
             for (let i = 0; i < array.length; i++) {
                 sum += array[i];
             }
-            console.log(sum)
+            console.log("sum"+sum)
             var avg = sum/array.length
             console.log(avg)
         }
@@ -60,7 +60,7 @@
             for (let i = 1; i < array.length; i++) {
                 if (array[i] > max) {
                     max= array[i]
-                    console.log(max)
+                    console.log("max"+max)
                 }
                 else{
                     break
@@ -77,7 +77,7 @@
                     min= array[i]  
                 }
                 
-            } console.log(min)
+            } console.log("min"+min)
             
         }
         min(arr)
